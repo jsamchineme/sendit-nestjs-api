@@ -5,7 +5,7 @@ import { ISchema, IConnection, IwhereConstraints, IModel, IEntity } from '../typ
  * This makes CRUD and other data related methods available to the entities
  * that will inherit this class
  */
-export class Model implements IModel {
+export class Model<ATR> implements IModel {
   schema: ISchema;
   connection: IConnection;
   whereConstraints: IwhereConstraints;
@@ -16,7 +16,7 @@ export class Model implements IModel {
     this.whereConstraints = {};
   }
 
-  async getAll(): Promise<IEntity[]> {
+  async getAll(): Promise<ATR[]> {
     const constraintsExist = Object.keys(this.whereConstraints).length > 0;
 
     let queryString;
@@ -39,7 +39,7 @@ export class Model implements IModel {
     }
   }
 
-  async count(): Promise<IEntity[]> {
+  async count(): Promise<ATR[]> {
     const constraintsExist = Object.keys(this.whereConstraints).length > 0;
 
     let queryString;
@@ -62,7 +62,7 @@ export class Model implements IModel {
     }
   }
 
-  async getOne(): Promise<IEntity> {
+  async getOne(): Promise<ATR> {
     const constraintsExist = Object.keys(this.whereConstraints).length > 0;
 
     let queryString;
@@ -122,7 +122,7 @@ export class Model implements IModel {
    * reset the constraints
    * @returns {Model} - the instance of this Model class facilitating method chainability
    */
-  private resetConstraints(): Model {
+  private resetConstraints(): Model<ATR> {
     this.whereConstraints = {};
     return this;
   }
@@ -131,7 +131,7 @@ export class Model implements IModel {
    * @param {Object} constraints - an object of attributes: values
    * @returns {Model} - the instance of this Model class facilitating method chainability
    */
-  where(constraints: object): Model {
+  where(constraints: object): Model<ATR> {
     const theseConstraints = Object.keys(constraints);
     theseConstraints.forEach((attribute) => {
       /* istanbul ignore next */
@@ -150,7 +150,7 @@ export class Model implements IModel {
    * @param {Number} id - the id of the record to be selected
    * @returns {Object} - the selected record
    */
-  async findById(id: number): Promise<IEntity> {
+  async findById(id: number): Promise<ATR> {
     const query = `SELECT * FROM ${this.schema.tableName} WHERE id = ${id}`;
     try {
       const resultSet = await this.connection.query(query);
@@ -162,7 +162,7 @@ export class Model implements IModel {
     }
   }
 
-  async findByAttribute(attribute: string, value: any): Promise<IEntity> {
+  async findByAttribute(attribute: string, value: any): Promise<ATR> {
     const query = `SELECT * FROM ${this.schema.tableName} WHERE "${attribute}" = '${value}'`;
     try {
       const resultSet = await this.connection.query(query);
@@ -178,7 +178,7 @@ export class Model implements IModel {
    * @param {Object} data - an object of attributes: value
    * @returns {Object} - the just created record
    */
-  async create(data: object): Promise<IEntity> {
+  async create(data: object): Promise<ATR> {
     const createData = this.prepareCreateData(data);
     const { fieldList, fieldValues } = createData;
     const query = `INSERT INTO ${this.schema.tableName} (${fieldList}) VALUES (${fieldValues}) RETURNING *`;
@@ -247,7 +247,7 @@ export class Model implements IModel {
     return preparedSetString;
   }
 
-  async update(id: any, data: object): Promise<IEntity> {
+  async update(id: any, data: object): Promise<ATR> {
     const preparedUpdateSet = this.prepareUpdateSet(data);
     const queryString = `UPDATE ${this.schema.tableName} ${preparedUpdateSet} WHERE id = ${id} RETURNING *`;
 

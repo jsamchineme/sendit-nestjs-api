@@ -15,7 +15,7 @@ export interface IUserAttributes {
   updated?: string;
 }
 
-export default class User extends Model {
+export default class User extends Model<IUserAttributes> {
   constructor(schema = userSchema) {
     super(schema);
   }
