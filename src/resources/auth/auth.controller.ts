@@ -8,9 +8,9 @@ import UserEmitter, {
 } from '../../helpers/events/UserEmitter';
 import { Controller, Post, Body, HttpCode, Req, Param, Delete, Patch, Put } from '@nestjs/common';
 import { UserService } from '../../resources/user/user.service';
-import { IUserAttributes } from '../../resources/user/user.model';
+import { IUserAttributes } from '../../types/Model';
 import { Request } from 'express';
-import { IRefreshedTokens } from '../../types/misc';
+import { IRefreshedTokens, IUserResponse } from '../../types/misc';
 
 @Controller()
 export class AuthController {
@@ -148,7 +148,7 @@ export class AuthController {
   @Post('reset')
   async requestPasswordReset(@Body() body: any) {
     const { email } = body;
-    const foundUser = await this.userService .where({ email }).getOne();
+    const foundUser: IUserResponse = await this.userService.where({ email }).getOne();
 
     let data: any;
     if (foundUser) {

@@ -225,7 +225,7 @@ export class Model<ATR> implements IModel {
     return preparedData;
   }
 
-  prepareUpdateSet(data: object): string {
+  private prepareUpdateSet(data: object): string {
     let preparedSetString = 'SET ';
     const fields = Object.keys(data);
     fields.forEach((field) => {
