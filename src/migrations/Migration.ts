@@ -1,6 +1,6 @@
 import { connection } from '../database/config';
 import * as NodeDebug from 'debug';
-import { IConnection, ISchema, Attribute } from '../types/Model';
+import { IConnection, ISchema, Attribute } from 'src/types/Model';
 
 const debug = NodeDebug('database');
 

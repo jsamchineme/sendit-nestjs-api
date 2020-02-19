@@ -1,5 +1,5 @@
-import ParcelModel from '../resources/parcel/parcel.model';
-import Exception from '../helpers/Exception';
+import ParcelModel from 'src/resources/parcel/parcel.model';
+import Exception from 'src/helpers/Exception';
 
 const Parcel = new ParcelModel();
 

@@ -1,5 +1,5 @@
 import * as jwt from 'jsonwebtoken';
-import Exception from '../helpers/Exception';
+import Exception from 'src/helpers/Exception';
 
 /**
  * Secure routes with JWT

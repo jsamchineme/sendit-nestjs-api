@@ -1,5 +1,5 @@
 import * as dotenv from 'dotenv';
-import UserModel from '../../resources/user/user.model';
+import UserModel from 'src/resources/user/user.model';
 import Mailer from '../Mailer';
 import statusUpdateTemplate from '../mailerTemplates/statusUpdateTemplate';
 import locationUpdateTemplate from '../mailerTemplates/locationUpdateTemplate';

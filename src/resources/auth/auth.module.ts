@@ -1,9 +1,9 @@
 import { Module, NestModule, MiddlewareConsumer, RequestMethod } from '@nestjs/common';
 import { AuthController } from './auth.controller';
 import { UserModule } from '../user/user.module';
-import AuthValidator from '../../middlewares/inputValidation/auth';
-import Authentication from '../../middlewares/Authentication';
-import Roles from '../../middlewares/Roles';
+import AuthValidator from 'src/middlewares/inputValidation/auth';
+import Authentication from 'src/middlewares/Authentication';
+import Roles from 'src/middlewares/Roles';
 
 const { verifyToken } = Authentication;
 const { validateLogin, validateSignup, validateUnique } = AuthValidator;

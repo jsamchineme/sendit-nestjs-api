@@ -1,6 +1,6 @@
 import * as faker from 'faker';
-import UserModel from '../resources/user/user.model';
-import ParcelModel from '../resources/parcel/parcel.model';
+import UserModel from 'src/resources/user/user.model';
+import ParcelModel from 'src/resources/parcel/parcel.model';
 
 const User = new UserModel();
 const Parcel = new ParcelModel();

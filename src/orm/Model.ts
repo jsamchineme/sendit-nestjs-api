@@ -1,5 +1,5 @@
-import { connection } from '../database/config';
-import { ISchema, IConnection, IwhereConstraints, IModel, IEntity } from '../types/Model';
+import { connection } from 'src/database/config';
+import { ISchema, IConnection, IwhereConstraints, IModel, IEntity } from 'src/types/Model';
 
 /**
  * This makes CRUD and other data related methods available to the entities

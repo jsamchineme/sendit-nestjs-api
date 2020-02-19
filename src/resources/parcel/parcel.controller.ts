@@ -1,11 +1,11 @@
 import { Controller, Get, Param, Injectable, Req, Post, Put } from '@nestjs/common';
 import { ParcelService } from './parcel.service';
-import { UserService } from '../user/user.service';
-import Response from '../../helpers/Response';
+import { UserService } from 'src/resources/user/user.service';
+import Response from 'src/helpers/Response';
 import ParcelEmitter, {
   PARCEL_STATUS_UPDATE,
   PARCEL_LOCATION_UPDATE,
-} from '../../helpers/events/ParcelEmitter';
+} from 'src/helpers/events/ParcelEmitter';
 
 @Injectable()
 @Controller()

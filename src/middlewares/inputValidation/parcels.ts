@@ -5,8 +5,8 @@ import {
   changeStatusSchema,
   changeLocationSchema,
 } from '../../requestSchemas/parcel';
-import Exception from '../../helpers/Exception';
-import ParcelModel from '../../resources/parcel/parcel.model';
+import Exception from 'src/helpers/Exception';
+import ParcelModel from 'src/resources/parcel/parcel.model';
 
 const Parcel = new ParcelModel();
 
