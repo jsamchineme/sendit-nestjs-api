@@ -1,8 +1,8 @@
 import { Controller, Get, Param, Req } from '@nestjs/common';
 import { UserService } from './user.service';
-import Response from '../../helpers/Response';
-import { ParcelController } from '../parcel/parcel.controller';
-import { ParcelService } from '../parcel/parcel.service';
+import Response from 'src/helpers/Response';
+import { ParcelController } from 'src/resources/parcel/parcel.controller';
+import { ParcelService } from 'src/resources/parcel/parcel.service';
 
 @Controller()
 export class UserController {

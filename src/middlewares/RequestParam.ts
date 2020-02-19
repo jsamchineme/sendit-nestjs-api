@@ -1,4 +1,4 @@
-import Exception from '../helpers/Exception';
+import Exception from 'src/helpers/Exception';
 
 /** Validate the request Params
  * For example wherever we have /:someResourceId

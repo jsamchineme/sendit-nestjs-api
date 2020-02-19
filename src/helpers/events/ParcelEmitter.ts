@@ -1,5 +1,5 @@
 import Emitter from './Emitter';
-import EmailNotification from '../services/EmailNotification';
+import EmailNotification from 'src/helpers/services/EmailNotification';
 
 const parcelEmitter = new Emitter();
 

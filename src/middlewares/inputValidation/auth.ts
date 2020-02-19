@@ -1,7 +1,7 @@
 import * as joi from 'joi';
 import { signupRequestSchema, loginRequestSchema } from '../../requestSchemas/auth';
-import Exception from '../../helpers/Exception';
-import UserModel from '../../resources/user/user.model';
+import Exception from 'src/helpers/Exception';
+import UserModel from 'src/resources/user/user.model';
 
 const User = new UserModel();
 

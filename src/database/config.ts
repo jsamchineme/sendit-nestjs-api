@@ -2,7 +2,7 @@ import { Pool } from 'pg';
 import * as dotenv from 'dotenv';
 import * as NodeDebug from 'debug';
 const debug = NodeDebug('database');
-import { IConnection } from '../types/Model';
+import { IConnection } from 'src/types/Model';
 
 dotenv.config();
 

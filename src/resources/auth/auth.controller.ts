@@ -1,16 +1,16 @@
 import * as jwt from 'jsonwebtoken';
 import * as bcrypt from 'bcryptjs';
-import Response from '../../helpers/Response';
-import { EXPIRES_IN, PASSWORD_RESET_EXPIRES_IN } from '../../constants/jwtOptions';
+import Response from 'src/helpers/Response';
+import { EXPIRES_IN, PASSWORD_RESET_EXPIRES_IN } from 'src/constants/jwtOptions';
 import UserEmitter, {
   PASSWORD_RESET_REQUEST,
   PASSWORD_RESET_COMPLETE,
-} from '../../helpers/events/UserEmitter';
+} from 'src/helpers/events/UserEmitter';
 import { Controller, Post, Body, HttpCode, Req, Param, Delete, Patch, Put } from '@nestjs/common';
-import { UserService } from '../../resources/user/user.service';
-import { IUserAttributes } from '../../resources/user/user.model';
+import { UserService } from 'src/resources/user/user.service';
+import { IUserAttributes } from 'src/resources/user/user.model';
 import { Request } from 'express';
-import { IRefreshedTokens } from '../../types/misc';
+import { IRefreshedTokens } from 'src/types/misc';
 
 @Controller()
 export class AuthController {

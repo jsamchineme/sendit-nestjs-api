@@ -1,4 +1,4 @@
-import { ISchema } from '../types/Model';
+import { ISchema } from 'src/types/Model';
 
 const parcelSchema: ISchema = {
   tableName: 'parcels',

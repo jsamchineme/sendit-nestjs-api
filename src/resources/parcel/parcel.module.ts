@@ -1,11 +1,11 @@
 import { Module, NestModule, MiddlewareConsumer, RequestMethod } from '@nestjs/common';
-import { ParcelController } from '../parcel/parcel.controller';
-import { UserService } from '../user/user.service';
-import { ParcelService } from '../parcel/parcel.service';
-import Authentication from '../../middlewares/Authentication';
-import Roles from '../../middlewares/Roles';
-import ParcelValidator from '../../middlewares/inputValidation/parcels';
-import RequestParam from '../../middlewares/RequestParam';
+import { ParcelController } from './parcel.controller';
+import { UserService } from 'src/resources/user/user.service';
+import { ParcelService } from './parcel.service';
+import Authentication from 'src/middlewares/Authentication';
+import Roles from 'src/middlewares/Roles';
+import ParcelValidator from 'src/middlewares/inputValidation/parcels';
+import RequestParam from 'src/middlewares/RequestParam';
 
 const { verifyToken } = Authentication;
 const { validateParams } = RequestParam;

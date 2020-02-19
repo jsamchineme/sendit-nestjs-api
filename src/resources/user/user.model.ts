@@ -1,5 +1,5 @@
-import userSchema from '../../migrations/users';
-import { Model } from '../../orm/Model';
+import userSchema from 'src/migrations/users';
+import { Model } from 'src/orm/Model';
 
 export interface IUserAttributes {
   id?: string;
